@@ -148,7 +148,25 @@ public class ResourceCentreTest {
 	public void doReturnCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
+		assertNotNull("Test if there is valid CamorderList arraylist to",camcorderList);
+		ResourceCentre.addCamcorder(camcorderList, cc1);
 		
+		//Error Occurs
+		Boolean isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0011");
+		assertFalse("Test if available camcorder CC0011 is returned -false" , isReturned);
+		
+		
+		//Normal
+		ResourceCentre.addCamcorder(camcorderList, cc2);
+		cc2.setIsAvailable(false);
+		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0012");
+		assertTrue("Test if loaned out camcorder CC0012 is returned -true" , isReturned);
+		
+		//Error occurs
+		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0013");
+		assertFalse("Test if loaned out camcorder CC0013 is returned -false" , isReturned);
+		
+			
 	}
 	@Test
 	public void doReturnChromebookTest() {
