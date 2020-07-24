@@ -171,7 +171,7 @@ public class ResourceCentre {
 	}
 	
 	public static Chromebook inputChromebook() {	
-		//Chromebook cb =null;
+		//Chromebook cb =null;c
 		// write your code here
 		String assetTag = Helper.readString("Enter asset tag > ");
 		String description = Helper.readString("Enter description > ");
